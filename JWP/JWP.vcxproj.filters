@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="gugudan.cpp">
+    <ClCompile Include="grammer\C++기본.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="grammer\gugudan.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

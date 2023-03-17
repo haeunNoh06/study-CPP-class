@@ -3,8 +3,9 @@
 
 int main(void) {
 
-	// << 는 출력 연산자
-	std::cout << "Hello World\n";
+	// << : 출력 연산자
+	// endl : 개행
+	std::cout << "Hello World" << std::endl;
 
 	return 0;
 }

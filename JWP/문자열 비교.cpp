@@ -8,35 +8,19 @@ int main(void) {
 	char str1[50] = "Hello";
 	char str2[50] = "World";
 
-	const int s1_l = strlen(str1);
-	const int s2_l = strlen(str2);
-
-	// s1_l과 s2_l 중 최소값
-	const int l = ( s1_l < s2_l ? s1_l : s2_l );
-
-	int i = 0;
-	while (i < 1) {
-		if (str1[i] > str2[i]) {
-			printf("str1 > str2 ");
-			break;
-		}
-		else {
-			printf("str1 < str2 ");
-			break;
-		}
-		i++;
+	int result = strcmp(str1, str2);
+	
+	if (result == 0) {
+		printf("str1 == str2");
 	}
-	if (i == 1) {
-		if (s1_l > s2_l) {
-			printf("str1 > str2");
-		}
-		else if (s1_l < s2_l) {
-			printf("str1 < str2");
-		}
-		else {
-			printf("str1 == str2");
-		}
+	else if ( result == 1 ) {
+		printf("str1 > str2");
 	}
+	else if ( result == -1 ) {
+		printf("str1 < str2");
+	}
+
+	
 
 	return 0;
 } 

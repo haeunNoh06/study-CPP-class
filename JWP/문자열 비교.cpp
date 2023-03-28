@@ -5,19 +5,18 @@ using namespace std;
 
 int main(void) {
 
-	char str1[50] = "Hello";
-	char str2[50] = "World";
-
-	int result = strcmp(str1, str2);
+	string str1 = "aaa";
+	string str2 = "aaaa";
 	
-	if (result == 0) {
-		printf("str1 == str2");
+	if (str1 == str2) {
+		cout << "str1 == str2";
 	}
-	else if ( result == 1 ) {
-		printf("str1 > str2");
+	// str2가 str1보다 사전에 늦게 나오게 됨
+	else if ( str1 > str2 ) {
+		cout << "str1 > str2";
 	}
-	else if ( result == -1 ) {
-		printf("str1 < str2");
+	else if ( str1 < str2 ) {
+		cout << "str1 < str2";
 	}
 
 	

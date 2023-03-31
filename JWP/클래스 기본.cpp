@@ -14,23 +14,29 @@ public:
 	string tel;
 	string depart;// 학과
 	string address;
+
+	void print(void) {
+		cout << "학번 : " << id << endl;
+		cout << "이름 : " << name << endl;
+		cout << "전화번호 : " << tel << endl;
+		cout << "학과 : " << depart << endl;
+		cout << "주소 : " << address << endl;
+	}
 };
 
 int main(void) {
 
 	// 자료형 : Student ( 클래스 생략 가능 )
-	struct Student student;
-	student.id = 3434;
-	student.name = "김길동";
-	student.tel = "010-1234-5618";
-	student.depart = "미용학과";
-	student.address = "서울시 강남구";
+	struct Student stu1;
+	stu1.id = 3434;
+	stu1.name = "김길동";
+	stu1.tel = "010-1234-5618";
+	stu1.depart = "미용학과";
+	stu1.address = "서울시 강남구";
 	
-	cout << "학번 : " << student.id << endl;
-	cout << "이름 : " << student.name << endl;
-	cout << "전화번호 : " << student.tel << endl;
-	cout << "학과 : " << student.depart << endl;
-	cout << "주소 : " << student.address << endl;
+	stu1.print();
+
+	
 
 	
 	return 0;

@@ -20,28 +20,25 @@ public:
     string name;
     string telephone;
     string department;
-    string home;
+    string address;
     Student() {
-        home = "김포";
+        address = "김포";
         department = "소프트웨어과";
         name = "김씨";
         studentId = 2211;
         telephone = "123-4567-8912";
 
     }
-    Student(int studentId, string name, string telephone, string department, string home) {
-        //this : 객체 자기자신을 가리키는 포인터(주소값)
-        //멤버변수와 매개변수가 이름이 같아도 구별가능
-        this->studentId = studentId;
-        this->name = name;
-        this->telephone = telephone;
-        this->department = department;
-        this->home = home;
+    Student(int studentId, string name, string telephone, string department, string address) 
+        // 멤버변수 초기화. const/참조형 멤버변수 사용가능
+        : studentId(studentId), name(name), telephone(telephone), department(department), address(address)
+    {
+        
     }
     // class 멤버 함수를 가질 수 있다
     void print(void) {
         cout << "이름 : " << name << "\n과 : " << department << "\n학번 : " << studentId <<
-            "\n전화번호 : " << telephone << "\n집주소 : " << home << endl;
+            "\n전화번호 : " << telephone << "\n집주소 : " << address << endl;
     }
 
 
@@ -52,9 +49,14 @@ int main(void) {
     //매개변수가 없는 생성자
     Student kim = Student();
     //kim.print();
-    Student kim2 = Student(2211, "kim", "010-0000-0000", "솦", "한국");
+    Student kim2 = Student(2211, "kim", "010-0000-0000", "소프트웨어과", "한국");
     kim2.print();
 
 
     return 0;
 }
+
+/**
+*멤버변수 초기화 : const/참조 멤버변수 사용가능 초기화 한 뒤 대입해야 함
+* 
+*/

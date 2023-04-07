@@ -48,15 +48,24 @@ int main(void) {
 
     //매개변수가 없는 생성자
     Student kim = Student();
-    //kim.print();
-    Student kim2 = Student(2211, "kim", "010-0000-0000", "소프트웨어과", "한국");
-    kim2.print();
 
+    // 정적할당
+    //kim.print();
+    //Student kim2 = Student(2211, "kim", "010-0000-0000", "소프트웨어과", "한국");
+    //kim2.print();
+
+    // 동적할당된 공간은 포인터로 접근한다.
+    Student* stu3 = new Student(22, "율곡", "010-1234-5678", "유교과", "한성부");
+    stu3->print();
+
+    // 동적할당 해제(안 하면 메모리 누수현상 발생)
+    delete stu3;
 
     return 0;
 }
 
 /**
-*멤버변수 초기화 : const/참조 멤버변수 사용가능 초기화 한 뒤 대입해야 함
+* this
+* 멤버변수 초기화 : const/참조 멤버변수 사용가능 초기화 한 뒤 대입해야 함
 * 
 */

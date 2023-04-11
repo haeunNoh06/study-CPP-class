@@ -54,13 +54,27 @@ int main(void) {
     //Student kim2 = Student(2211, "kim", "010-0000-0000", "소프트웨어과", "한국");
     //kim2.print();
 
+
+    Student stu3[2];
+    for (int i = 0; i < sizeof(stu3)/sizeof(stu3[0]); i++) {
+        stu3[i].print();
+    }
+
+
     // 동적할당 : 실행시간(runtime)에 메모리 크기가 결정(메모리 heap영역)
     // 동적할당된 공간은 포인터로 접근한다.
-    Student* stu3 = new Student(22, "율곡", "010-1234-5678", "유교과", "한성부");
-    stu3->print();
+    //Student* stu3 = new Student(22, "율곡", "010-1234-5678", "유교과", "한성부");
+    //stu3->print();
+    //// 동적할당 해제(안 하면 메모리 누수현상 발생)
+    //delete stu3;
 
-    // 동적할당 해제(안 하면 메모리 누수현상 발생)
-    delete stu3;
+
+    Student* stu4 = new Student[2];
+    for (int i = 0; i < sizeof(stu4) / sizeof(stu4[0]); i++) {
+        stu4[i].print();    // 배열의 요소에 해당하는 객체는 멤버를 .으로 접근
+    }
+
+    delete[] stu4;
 
     return 0;
 }

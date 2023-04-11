@@ -49,11 +49,11 @@ int main(void) {
     //매개변수가 없는 생성자
     Student kim = Student();
 
-    // 정적할당
-    //kim.print();
+    // 정적할당 : 컴파일 시간에 메모리 크기가 결정
     //Student kim2 = Student(2211, "kim", "010-0000-0000", "소프트웨어과", "한국");
     //kim2.print();
 
+    // 동적할당 : 실행시간(runtime)에 메모리 크기가 결정(메모리 heap영역)
     // 동적할당된 공간은 포인터로 접근한다.
     Student* stu3 = new Student(22, "율곡", "010-1234-5678", "유교과", "한성부");
     stu3->print();

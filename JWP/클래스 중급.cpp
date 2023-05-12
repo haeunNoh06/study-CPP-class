@@ -14,6 +14,12 @@ public:
 		cout << "MString 생성자 호출 완료" << endl;
 	}
 
+	// 복사생성자(별도의 정의가 없으면 컴파일러가 알아서 만들어 줌)
+	MString(const MString& rhs) : c_str_(rhs.c_str_), size_(rhs.size_)
+	{
+		cout << "복사생성자 호출" << endl;
+	}
+	
 	// 소멸자의 매개변수는 없다.
 	~MString() {
 		// 소멸자로 생성자에서 동적할당한 메모리 해제
@@ -30,11 +36,17 @@ private:
 
 int main(void) {
 	// 생성자가 호출되면서 문자열의 "I will be back"만큼의 동적할당이 이뤄짐
-	MString* str = new MString("I will be back");
-	cout << str->c_str() << endl;
+	// MString* str = new MString("I will be back");
 
 	// 객체 str만 삭제. 동적할당으로 생성된 문자열은 그대로 남아있음(메모리 누수)
 	// TODO : 소멸자(destructor)를 이용하여 동적할당된 메모리도 해제하자
-	delete str;// 동적할당 해제
+	// delete str;// 동적할당 해제
+
+	// 일반생성자 호출
+	MString str = MString("I will be back");
+
+	// 복사생성자 호출
+	MString str2 = str;
+
 	return 0;
 }
